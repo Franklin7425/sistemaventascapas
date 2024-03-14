@@ -1,6 +1,6 @@
 ﻿namespace SistemasVentas.VISTA.DetalleIngresoVistas
 {
-    partial class DetalleIngresoListarVista
+    partial class DetalleInListarVista
     {
         /// <summary>
         /// Required designer variable.

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SistemasVentas.VISTA.DetalleIngresoVistas
 {
-    public partial class DetalleIngresoListarVista : Form
+    public partial class DetalleInListarVista : Form
     {
-        public DetalleIngresoListarVista()
+        public DetalleInListarVista()
         {
             InitializeComponent();
         }
