@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace SistemasVentas.VISTA.TipoProductoVistas
 {
-    public partial class TipoProductoListarVista : Form
+    public partial class TipoProdListarVista : Form
     {
-        public TipoProductoListarVista()
+        public TipoProdListarVista()
         {
             InitializeComponent();
         }
-        TipoProductoBss bss= new TipoProductoBss();
+        TipoProdBss bss= new TipoProdBss();
 
         private void TipoProductoListarVista_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bss.ListarTiposProductoBss();
+            dataGridView1.DataSource = bss.ListarTiposProdBss();
         }
     }
 }

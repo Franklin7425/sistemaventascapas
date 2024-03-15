@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace SistemasVentas.VISTA.DetalleIngresoVistas
 {
-    public partial class DetalleInListarVista : Form
+    public partial class DetalleIngListarVista : Form
     {
-        public DetalleInListarVista()
+        public DetalleIngListarVista()
         {
             InitializeComponent();
         }
-        DetalleIngresoBss bss = new DetalleIngresoBss();
+        DetalleIngBss bss = new DetalleIngBss();
 
         private void DetalleIngresoListarVista_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bss.ListarDetallesIngresoBss();
+            dataGridView1.DataSource = bss.ListarDetallesIngBss();
         }
     }
 }

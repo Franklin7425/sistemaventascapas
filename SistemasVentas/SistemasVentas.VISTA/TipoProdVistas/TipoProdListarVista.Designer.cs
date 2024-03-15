@@ -1,6 +1,6 @@
-﻿namespace SistemasVentas.VISTA.DetalleIngresoVistas
+﻿namespace SistemasVentas.VISTA.TipoProductoVistas
 {
-    partial class DetalleInListarVista
+    partial class TipoProdListarVista
     {
         /// <summary>
         /// Required designer variable.
@@ -44,15 +44,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 426);
             this.dataGridView1.TabIndex = 0;
             // 
-            // DetalleIngresoListarVista
+            // TipoProductoListarVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "DetalleIngresoListarVista";
-            this.Text = "DetalleIngresoListarVista";
-            this.Load += new System.EventHandler(this.DetalleIngresoListarVista_Load);
+            this.Name = "TipoProductoListarVista";
+            this.Text = "TipoProductoListarVista";
+            this.Load += new System.EventHandler(this.TipoProductoListarVista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
