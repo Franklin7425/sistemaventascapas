@@ -38,6 +38,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,11 +86,14 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(160, 134);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(331, 23);
             this.textBox3.TabIndex = 5;
+            this.textBox3.UseSystemPasswordChar = true;
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(207, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 53);
@@ -100,6 +104,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(338, 282);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 53);
@@ -123,11 +128,22 @@
             this.textBox4.Size = new System.Drawing.Size(331, 23);
             this.textBox4.TabIndex = 9;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(510, 57);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "SELECCIONAR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // UsuarioInsertarVista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
@@ -157,5 +173,6 @@
         private Button button2;
         private Label label4;
         private TextBox textBox4;
+        private Button button3;
     }
 }

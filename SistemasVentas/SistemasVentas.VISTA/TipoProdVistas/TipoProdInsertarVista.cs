@@ -26,7 +26,12 @@ namespace SistemasVentas.VISTA.TipoProductoVistas
             t.Nombre = textBox1.Text;
 
             bss.InsertarTiposProdBss(t);
-            MessageBox.Show("Se guardo correctamente la persona");
+            MessageBox.Show("Se guardo correctamente el nombre");
+        }
+
+        private void TipoProdInsertarVista_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
