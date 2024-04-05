@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.MarcaVistas
 {
@@ -18,15 +19,15 @@ namespace SistemasVentas.VISTA.MarcaVistas
         {
             InitializeComponent();
         }
-
         MarcaBss bss = new MarcaBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            Marca m = new Marca();
-            m.Nombre = textBox1.Text;
+            Marca marca = new Marca();
+            marca.Nombre = textBox1.Text;
+            marca.Estado = textBox2.Text;
 
-            bss.InsertarMarcasBss(m);
-            MessageBox.Show("Se guardo correctamente la persona");
+            bss.InsertarMarcaBss(marca);
+            MessageBox.Show("Se guardo correctamente la Marca");
         }
     }
 }

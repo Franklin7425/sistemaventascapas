@@ -1,6 +1,6 @@
-﻿namespace SistemasVentas.VISTA.LoginUser
+﻿namespace SistemasVentas.VISTA.RolVistas
 {
-    partial class VendedorPersonaVista
+    partial class VendeRolListarVista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendedorPersonaVista));
             pMenu = new Panel();
             button19 = new Button();
             button18 = new Button();
@@ -45,11 +44,11 @@
             button7 = new Button();
             button6 = new Button();
             button5 = new Button();
-            dataGridView1 = new DataGridView();
+            label1 = new Label();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            label1 = new Label();
+            dataGridView1 = new DataGridView();
             pMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -70,10 +69,10 @@
             pMenu.Controls.Add(button8);
             pMenu.Controls.Add(button7);
             pMenu.Controls.Add(button6);
-            pMenu.Location = new Point(440, 28);
+            pMenu.Location = new Point(381, 31);
             pMenu.Name = "pMenu";
             pMenu.Size = new Size(86, 281);
-            pMenu.TabIndex = 15;
+            pMenu.TabIndex = 25;
             pMenu.Visible = false;
             // 
             // button19
@@ -84,6 +83,7 @@
             button19.TabIndex = 13;
             button19.Text = "CERRAR SESION";
             button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // button18
             // 
@@ -93,6 +93,7 @@
             button18.TabIndex = 12;
             button18.Text = "DETALLEING";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
             // 
             // button17
             // 
@@ -102,6 +103,7 @@
             button17.TabIndex = 11;
             button17.Text = "DETALLEVENT";
             button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
             // 
             // button16
             // 
@@ -111,6 +113,7 @@
             button16.TabIndex = 10;
             button16.Text = "PRODUCTO";
             button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
             // 
             // button15
             // 
@@ -120,6 +123,7 @@
             button15.TabIndex = 9;
             button15.Text = "INGRESO";
             button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
             // 
             // button14
             // 
@@ -129,6 +133,7 @@
             button14.TabIndex = 8;
             button14.Text = "TIPOPROD";
             button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button13
             // 
@@ -138,6 +143,7 @@
             button13.TabIndex = 7;
             button13.Text = "MARCA";
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // button12
             // 
@@ -147,6 +153,7 @@
             button12.TabIndex = 6;
             button12.Text = "PROVEE";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button11
             // 
@@ -156,6 +163,7 @@
             button11.TabIndex = 5;
             button11.Text = "PROVEEDOR";
             button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button10
             // 
@@ -165,6 +173,7 @@
             button10.TabIndex = 4;
             button10.Text = "VENTA";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 
@@ -172,8 +181,9 @@
             button9.Name = "button9";
             button9.Size = new Size(86, 23);
             button9.TabIndex = 3;
-            button9.Text = "CLIENTE";
+            button9.Text = "PERSONA";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -183,6 +193,7 @@
             button8.TabIndex = 2;
             button8.Text = "USUARIOROL";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -190,8 +201,9 @@
             button7.Name = "button7";
             button7.Size = new Size(86, 23);
             button7.TabIndex = 1;
-            button7.Text = "ROL";
+            button7.Text = "CLIENTE";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -201,86 +213,95 @@
             button6.TabIndex = 0;
             button6.Text = "USUARIO";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
-            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
-            button5.Location = new Point(440, 8);
+            button5.Location = new Point(381, 8);
             button5.Name = "button5";
-            button5.Size = new Size(75, 26);
-            button5.TabIndex = 14;
+            button5.Size = new Size(86, 26);
+            button5.TabIndex = 24;
             button5.Text = "MENU";
             button5.UseVisualStyleBackColor = true;
-            button5.Visible = false;
             button5.Click += button5_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(184, 25);
+            label1.TabIndex = 23;
+            label1.Text = "ADMINISTRAR ROL";
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button3.Location = new Point(122, 45);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(104, 22);
+            button3.TabIndex = 22;
+            button3.Text = "EDITAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button2.Location = new Point(12, 45);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 22);
+            button2.TabIndex = 20;
+            button2.Text = "AGREGAR";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.DialogResult = DialogResult.OK;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.Location = new Point(232, 45);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 22);
+            button1.TabIndex = 19;
+            button1.Text = "SELECCIONAR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 66);
+            dataGridView1.Location = new Point(12, 71);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(498, 335);
-            dataGridView1.TabIndex = 13;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(441, 320);
+            dataGridView1.TabIndex = 18;
             // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(260, 37);
-            button3.Name = "button3";
-            button3.Size = new Size(118, 23);
-            button3.TabIndex = 11;
-            button3.Text = "EDITAR PERSONA";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(136, 37);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 23);
-            button2.TabIndex = 10;
-            button2.Text = "CREAR PERSONA";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(12, 37);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 23);
-            button1.TabIndex = 9;
-            button1.Text = "LISTAR PERSONA";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(206, 25);
-            label1.TabIndex = 8;
-            label1.Text = "VENDEDOR PERSONA";
-            // 
-            // VendedorPersonaVista
+            // VendeRolListarVista
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(527, 415);
+            BackColor = SystemColors.HotTrack;
+            ClientSize = new Size(482, 422);
             Controls.Add(pMenu);
             Controls.Add(button5);
-            Controls.Add(dataGridView1);
+            Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label1);
-            Name = "VendedorPersonaVista";
-            Text = "VendedorPersonaVista";
+            Controls.Add(dataGridView1);
+            Name = "VendeRolListarVista";
+            Text = "VendeRolListarVista";
+            Load += VendeRolListarVista_Load;
             pMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -305,10 +326,10 @@
         private Button button7;
         private Button button6;
         private Button button5;
-        private DataGridView dataGridView1;
+        private Label label1;
         private Button button3;
         private Button button2;
         private Button button1;
-        private Label label1;
+        private DataGridView dataGridView1;
     }
 }

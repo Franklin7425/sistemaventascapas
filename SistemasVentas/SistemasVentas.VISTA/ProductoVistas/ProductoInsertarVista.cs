@@ -1,4 +1,9 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using SistemasVentas.VISTA.MarcaVistas;
+using SistemasVentas.VISTA.PersonaVistas;
+using SistemasVentas.VISTA.TipoProdVistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
-
 
 namespace SistemasVentas.VISTA.ProductoVistas
 {
@@ -19,20 +21,44 @@ namespace SistemasVentas.VISTA.ProductoVistas
         {
             InitializeComponent();
         }
-
         ProductoBss bss = new ProductoBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            Producto p = new Producto();
-            p.IdTipoProd = Convert.ToInt32(textBox1.Text);
-            p.IdMarca = Convert.ToInt32(textBox2.Text);
-            p.Nombre = textBox3.Text;
-            p.CodigoBarra = textBox4.Text;
-            p.Unidad = Convert.ToInt32(textBox5.Text);
-            p.Descripcion = textBox6.Text;
+            Producto producto = new Producto();
+            producto.IdTipoProd = IdTipoProdSeleccionado;
+            producto.IdMarca = IdMarcaSeleccionada;
+            producto.Nombre = textBox3.Text;
+            producto.CodigoBarra = textBox4.Text;
+            producto.Unidad = Convert.ToInt32(textBox5.Text);
+            producto.Descripcion = textBox6.Text;
+            producto.Estado = textBox7.Text;
 
-            bss.InsertarProductosBss(p);
-            MessageBox.Show("Se guardo correctamente la persona");
+            bss.InsertarProductoBss(producto);
+            MessageBox.Show("Se guardo correctamente el Producto");
+        }
+
+        public static int IdTipoProdSeleccionado = 0;
+        TipoProdBss bsstipoProd = new TipoProdBss();
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TipoProdListarVista fr = new TipoProdListarVista();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                TipoProd tipoProd = bsstipoProd.ObtenerTipoProdIdBss(IdTipoProdSeleccionado);
+                textBox1.Text = tipoProd.Nombre;
+            }
+        }
+
+        public static int IdMarcaSeleccionada = 0;
+        MarcaBss bssmarca = new MarcaBss();
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MarcaListarVista fr = new MarcaListarVista();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                Marca marca = bssmarca.ObtenerMarcaIdBss(IdMarcaSeleccionada);
+                textBox2.Text = marca.Nombre;
+            }
         }
     }
 }

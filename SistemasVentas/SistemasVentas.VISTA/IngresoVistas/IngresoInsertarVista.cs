@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using SistemasVentas.VISTA.ProveedorVistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
-using SistemasVentas.VISTA.ProveedorVistas;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.IngresoVistas
 {
@@ -19,29 +20,28 @@ namespace SistemasVentas.VISTA.IngresoVistas
         {
             InitializeComponent();
         }
-
-        public static int IdProveedorSeleccionado = 0;
-
         IngresoBss bss = new IngresoBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            Ingreso i = new Ingreso();
-            i.IdProveedor = IdProveedorSeleccionado;
-            i.FechaIngreso = Convert.ToDateTime(textBox2.Text);
-            i.Total = Convert.ToDecimal(textBox3.Text);
+            Ingreso ingreso = new Ingreso();
+            ingreso.IdProveedor = IdProveedorSeleccionado;
+            ingreso.FechaIngreso = dateTimePicker1.Value;
+            ingreso.Total = Convert.ToInt32(textBox3.Text);
+            ingreso.Estado = textBox4.Text;
 
-            bss.InsertarIngresosBss(i);
-            MessageBox.Show("Se guardo correctamente la persona");
+            bss.InsertarIngresoBss(ingreso);
+            MessageBox.Show("Se guardo correctamente el Ingreso");
         }
 
+        public static int IdProveedorSeleccionado = 0;
         ProveedorBss bssproveedor = new ProveedorBss();
         private void button3_Click(object sender, EventArgs e)
         {
             ProveedorListarVista fr = new ProveedorListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                Proveedor proveedor = bssproveedor.ObtenerIdBss(IdProveedorSeleccionado);
-                textBox1.Text = proveedor.Nombre + " " + proveedor.Telefono;
+                Proveedor proveedor = bssproveedor.ObtenerProveedorIdBss(IdProveedorSeleccionado);
+                textBox1.Text = proveedor.Nombre;
             }
         }
     }

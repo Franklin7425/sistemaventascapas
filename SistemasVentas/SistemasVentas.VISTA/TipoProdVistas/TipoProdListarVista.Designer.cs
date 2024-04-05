@@ -1,4 +1,4 @@
-﻿namespace SistemasVentas.VISTA.TipoProductoVistas
+﻿namespace SistemasVentas.VISTA.TipoProdVistas
 {
     partial class TipoProdListarVista
     {
@@ -28,91 +28,333 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 380);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(368, 415);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "ELIMINAR";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button3 = new Button();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            pMenu = new Panel();
+            button19 = new Button();
+            button18 = new Button();
+            button17 = new Button();
+            button16 = new Button();
+            button15 = new Button();
+            button14 = new Button();
+            button13 = new Button();
+            button12 = new Button();
+            button11 = new Button();
+            button10 = new Button();
+            button9 = new Button();
+            button8 = new Button();
+            button7 = new Button();
+            button6 = new Button();
+            button5 = new Button();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(219, 415);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "EDITAR";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new Point(118, 47);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(105, 22);
+            button3.TabIndex = 14;
+            button3.Text = "EDITAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(229, 47);
+            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(105, 22);
+            button4.TabIndex = 13;
+            button4.Text = "ELIMINAR";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(81, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "AGREGAR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(7, 47);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(105, 22);
+            button2.TabIndex = 12;
+            button2.Text = "AGREGAR";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(553, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "SELECCIONAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.DialogResult = DialogResult.OK;
+            button1.Location = new Point(340, 47);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 22);
+            button1.TabIndex = 11;
+            button1.Text = "SELECCIONAR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(7, 73);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(364, 320);
+            dataGridView1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.HotTrack;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label1.Location = new Point(7, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(243, 25);
+            label1.TabIndex = 15;
+            label1.Text = "ADMINISTRAR TIPOPROD";
+            // 
+            // pMenu
+            // 
+            pMenu.Controls.Add(button19);
+            pMenu.Controls.Add(button18);
+            pMenu.Controls.Add(button17);
+            pMenu.Controls.Add(button16);
+            pMenu.Controls.Add(button15);
+            pMenu.Controls.Add(button14);
+            pMenu.Controls.Add(button13);
+            pMenu.Controls.Add(button12);
+            pMenu.Controls.Add(button11);
+            pMenu.Controls.Add(button10);
+            pMenu.Controls.Add(button9);
+            pMenu.Controls.Add(button8);
+            pMenu.Controls.Add(button7);
+            pMenu.Controls.Add(button6);
+            pMenu.Location = new Point(368, 29);
+            pMenu.Name = "pMenu";
+            pMenu.Size = new Size(86, 281);
+            pMenu.TabIndex = 17;
+            pMenu.Visible = false;
+            // 
+            // button19
+            // 
+            button19.Location = new Point(0, 257);
+            button19.Name = "button19";
+            button19.Size = new Size(86, 23);
+            button19.TabIndex = 13;
+            button19.Text = "CERRAR SESION";
+            button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
+            // 
+            // button18
+            // 
+            button18.Location = new Point(0, 238);
+            button18.Name = "button18";
+            button18.Size = new Size(86, 23);
+            button18.TabIndex = 12;
+            button18.Text = "DETALLEING";
+            button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(0, 218);
+            button17.Name = "button17";
+            button17.Size = new Size(86, 23);
+            button17.TabIndex = 11;
+            button17.Text = "DETALLEVENT";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
+            // 
+            // button16
+            // 
+            button16.Location = new Point(0, 198);
+            button16.Name = "button16";
+            button16.Size = new Size(86, 23);
+            button16.TabIndex = 10;
+            button16.Text = "PRODUCTO";
+            button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(0, 178);
+            button15.Name = "button15";
+            button15.Size = new Size(86, 23);
+            button15.TabIndex = 9;
+            button15.Text = "INGRESO";
+            button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(0, 158);
+            button14.Name = "button14";
+            button14.Size = new Size(86, 23);
+            button14.TabIndex = 8;
+            button14.Text = "CLIENTE";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(0, 139);
+            button13.Name = "button13";
+            button13.Size = new Size(86, 23);
+            button13.TabIndex = 7;
+            button13.Text = "MARCA";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(0, 120);
+            button12.Name = "button12";
+            button12.Size = new Size(86, 23);
+            button12.TabIndex = 6;
+            button12.Text = "PROVEE";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(0, 100);
+            button11.Name = "button11";
+            button11.Size = new Size(86, 23);
+            button11.TabIndex = 5;
+            button11.Text = "PROVEEDOR";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(0, 80);
+            button10.Name = "button10";
+            button10.Size = new Size(86, 23);
+            button10.TabIndex = 4;
+            button10.Text = "VENTA";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(0, 60);
+            button9.Name = "button9";
+            button9.Size = new Size(86, 23);
+            button9.TabIndex = 3;
+            button9.Text = "PERSONA";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(0, 40);
+            button8.Name = "button8";
+            button8.Size = new Size(86, 23);
+            button8.TabIndex = 2;
+            button8.Text = "USUARIOROL";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(0, 20);
+            button7.Name = "button7";
+            button7.Size = new Size(86, 23);
+            button7.TabIndex = 1;
+            button7.Text = "ROL";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(0, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(86, 23);
+            button6.TabIndex = 0;
+            button6.Text = "USUARIO";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(368, 6);
+            button5.Name = "button5";
+            button5.Size = new Size(86, 26);
+            button5.TabIndex = 16;
+            button5.Text = "MENU";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.HotTrack;
+            label3.Location = new Point(-2, -5);
+            label3.Name = "label3";
+            label3.Size = new Size(468, 77);
+            label3.TabIndex = 45;
             // 
             // TipoProdListarVista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "TipoProdListarVista";
-            this.Text = "TipoProductoListarVista";
-            this.Load += new System.EventHandler(this.TipoProductoListarVista_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(460, 401);
+            Controls.Add(pMenu);
+            Controls.Add(button5);
+            Controls.Add(label1);
+            Controls.Add(button3);
+            Controls.Add(button4);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
+            Controls.Add(label3);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "TipoProdListarVista";
+            Text = "TipoProdListarVista";
+            Load += TipoProdListarVista_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            pMenu.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button4;
         private Button button3;
+        private Button button4;
         private Button button2;
         private Button button1;
+        private DataGridView dataGridView1;
+        private Label label1;
+        private Panel pMenu;
+        private Button button19;
+        private Button button18;
+        private Button button17;
+        private Button button16;
+        private Button button15;
+        private Button button14;
+        private Button button13;
+        private Button button12;
+        private Button button11;
+        private Button button10;
+        private Button button9;
+        private Button button8;
+        private Button button7;
+        private Button button6;
+        private Button button5;
+        private Label label3;
     }
 }

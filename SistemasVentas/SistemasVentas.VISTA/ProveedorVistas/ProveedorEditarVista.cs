@@ -15,7 +15,7 @@ namespace SistemasVentas.VISTA.ProveedorVistas
     public partial class ProveedorEditarVista : Form
     {
         int idx = 0;
-        Proveedor p = new Proveedor();
+        Proveedor proveedor = new Proveedor();
         ProveedorBss bss = new ProveedorBss();
         public ProveedorEditarVista(int id)
         {
@@ -23,22 +23,24 @@ namespace SistemasVentas.VISTA.ProveedorVistas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            p.Nombre = textBox1.Text;
-            p.Telefono = textBox2.Text;
-            p.Direccion = textBox3.Text;
-
-            bss.EditarProveedorBss(p);
-            MessageBox.Show("SE GUARDO CORRECTAMENTE");
-        }
-
         private void ProveedorEditarVista_Load(object sender, EventArgs e)
         {
-            p = bss.ObtenerIdBss(idx);
-            textBox1.Text = p.Nombre;
-            textBox2.Text = p.Telefono;
-            textBox3.Text = p.Direccion;
+            proveedor = bss.ObtenerProveedorIdBss(idx);
+            textBox1.Text = proveedor.Nombre;
+            textBox2.Text = proveedor.Telefono;
+            textBox3.Text = proveedor.Direccion;
+            textBox4.Text = proveedor.Estado;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            proveedor.Nombre = textBox1.Text;
+            proveedor.Telefono = textBox2.Text;
+            proveedor.Direccion = textBox3.Text;
+            proveedor.Estado = textBox4.Text;
+
+            bss.EditarProveedorBss(proveedor);
+            MessageBox.Show("Datos Actualizados");
         }
     }
 }

@@ -1,24 +1,40 @@
 ﻿using SistemasVentas.DAL;
+using SistemasVentas.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemasVentas.Modelos;
 
 namespace SistemasVentas.BSS
 {
     public class ProveeBss
     {
-        ProveeDAL dal = new ProveeDAL();
-        public DataTable ListarProveesBss()
+        ProveeDal dal = new ProveeDal();
+        public DataTable ListarProveesBass()
         {
-            return dal.ListarProveesDAL();
+            return dal.ListarProveesDal();
         }
-        public void InsertarProveesBss(Provee provee)
+
+        public void InsertarProveeBss(Provee provee)
         {
-            dal.InsertarProveeDAL(provee);
+            dal.InsertarProveeDal(provee);
+        }
+
+        public Provee ObtenerProveeIdBss(int id)
+        {
+            return dal.ObtenerProveeId(id);
+        }
+
+        public void EditarProveeBss(Provee provee)
+        {
+            dal.EditarProveeDal(provee);
+        }
+
+        public void EliminarProveeBss(int id)
+        {
+            dal.EliminarProveeDal(id);
         }
     }
 }

@@ -1,35 +1,35 @@
 ﻿using SistemasVentas.DAL;
+using SistemasVentas.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemasVentas.Modelos;
 
 namespace SistemasVentas.BSS
 {
     public class UsuarioRolBss
     {
-        UsuarioRolDAL dal = new UsuarioRolDAL();
-        public DataTable ListarUsuariosRolBss()
+        UsuarioRolDal dal = new UsuarioRolDal();
+        public DataTable ListarUsuarioRolesBass()
         {
-            return dal.ListarUsuariosRolDAL();
+            return dal.ListarUsuarioRolesDal();
         }
 
-        public void InsertarUsuariosRolBss(UsuarioRol usuariorol)
+        public void InsertarUsuarioRolBss(UsuarioRol usuarioRol)
         {
-            dal.InsertarUsuarioRolDAL(usuariorol);
+            dal.InsertarUsuarioRolDal(usuarioRol);
         }
 
-        public UsuarioRol ObtenerIdBss(int id)
+        public UsuarioRol ObtenerUsuarioRolIdBss(int id)
         {
             return dal.ObtenerUsuarioRolId(id);
         }
 
-        public void EditarUsuarioRolBss(UsuarioRol u)
+        public void EditarUsuarioRolBss(UsuarioRol usuarioRol)
         {
-            dal.EditarUsuarioRolDal(u);
+            dal.EditarUsuarioRolDal(usuarioRol);
         }
 
         public void EliminarUsuarioRolBss(int id)

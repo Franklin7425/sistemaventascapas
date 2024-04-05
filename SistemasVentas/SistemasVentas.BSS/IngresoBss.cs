@@ -1,35 +1,35 @@
 ﻿using SistemasVentas.DAL;
+using SistemasVentas.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemasVentas.Modelos;
 
 namespace SistemasVentas.BSS
 {
     public class IngresoBss
     {
-        IngresoDAL dal = new IngresoDAL();
-        public DataTable ListarIngresosBss()
+        IngresoDal dal = new IngresoDal();
+        public DataTable ListarIngresosBass()
         {
-            return dal.ListarIngresosDAL();
+            return dal.ListarIngresosDal();
         }
 
-        public void InsertarIngresosBss(Ingreso ingreso)
+        public void InsertarIngresoBss(Ingreso ingreso)
         {
-            dal.InsertarIngresoDAL(ingreso);
+            dal.InsertarIngresoDal(ingreso);
         }
 
-        public Ingreso ObtenerIdBss(int id)
+        public Ingreso ObtenerIngresoIdBss(int id)
         {
             return dal.ObtenerIngresoId(id);
         }
 
-        public void EditarIngresoBss(Ingreso i)
+        public void EditarIngresoBss(Ingreso ingreso)
         {
-            dal.EditarIngresoDal(i);
+            dal.EditarIngresoDal(ingreso);
         }
 
         public void EliminarIngresoBss(int id)

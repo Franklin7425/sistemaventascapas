@@ -1,5 +1,6 @@
 ﻿using SistemasVentas.BSS;
 using SistemasVentas.Modelos;
+using SistemasVentas.VISTA.PersonaVistas;
 using SistemasVentas.VISTA.RolVistas;
 using SistemasVentas.VISTA.UsuarioVistas;
 using System;
@@ -11,13 +12,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.UsuarioRolVistas
 {
     public partial class UsuarioRolEditarVista : Form
     {
         int idx = 0;
-        UsuarioRol u = new UsuarioRol();
+        UsuarioRol usuarioRol = new UsuarioRol();
         UsuarioRolBss bss = new UsuarioRolBss();
         public UsuarioRolEditarVista(int id)
         {
@@ -25,65 +27,48 @@ namespace SistemasVentas.VISTA.UsuarioRolVistas
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void UsuarioRolEditarVista_Load(object sender, EventArgs e)
         {
-           // UsuarioRolListarVista fr = new UsuarioRolListarVista();
-           // if (fr.ShowDialog() == DialogResult.OK)
-            //{
-               // UsuarioRol usuariorol = bss.ObtenerIdBss(IdUsuarioSeleccionada);
-                //textBox1.Text = usuariorol.IdUsuarioRol.ToString();
-            //}
+            usuarioRol = bss.ObtenerUsuarioRolIdBss(idx);
+            textBox1.Text = Convert.ToString(usuarioRol.IdUsuario);
+            textBox2.Text = Convert.ToString(usuarioRol.IdRol);
+            dateTimePicker1.Value = usuarioRol.FechaAsigna;
+            textBox3.Text = usuarioRol.Estado;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            u.IdUsuario = IdUsuarioSeleccionada;
-            u.IdRol = IdRolSeleccionada;
-            u.FechaAsigna = Convert.ToDateTime(textBox3.Text);
-            bss.EditarUsuarioRolBss(u);
+            usuarioRol.IdUsuario = IdUsuarioSeleccionado;
+            usuarioRol.IdRol = IdRolSeleccionado;
+            usuarioRol.FechaAsigna = dateTimePicker1.Value;
+            usuarioRol.Estado = textBox3.Text;
+
+            bss.EditarUsuarioRolBss(usuarioRol);
             MessageBox.Show("Datos Actualizados");
         }
 
-        private void UsuarioRolEditarVista_Load(object sender, EventArgs e)
-        {
-            u = bss.ObtenerIdBss(idx);
-            textBox1.Text = u.IdUsuario.ToString();
-            textBox2.Text = u.IdRol.ToString();
-            textBox3.Text = u.FechaAsigna.ToString();
-        }
-
-        public static int IdUsuarioSeleccionada = 0;
-        UsuarioBss bssuser = new UsuarioBss();
-        private void button3_Click_1(object sender, EventArgs e)
+        public static int IdUsuarioSeleccionado = 0;
+        UsuarioBss bssusuario = new UsuarioBss();
+        private void button3_Click(object sender, EventArgs e)
         {
             UsuarioListarVista fr = new UsuarioListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                Usuario usuario = bssuser.ObtenerIdBss(IdUsuarioSeleccionada);
+                Usuario usuario = bssusuario.ObtenerUsuarioIdBss(IdUsuarioSeleccionado);
                 textBox1.Text = usuario.NombreUser;
             }
         }
 
-        public static int IdRolSeleccionada = 0;
+        public static int IdRolSeleccionado = 0;
         RolBss bssrol = new RolBss();
         private void button4_Click(object sender, EventArgs e)
         {
             RolListarVista fr = new RolListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                Rol rol = bssrol.ObtenerIdBss(IdRolSeleccionada);
+                Rol rol = bssrol.ObtenerRolIdBss(IdRolSeleccionado);
                 textBox2.Text = rol.Nombre;
             }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            u.IdUsuario = IdUsuarioSeleccionada;
-            u.IdRol = IdRolSeleccionada;
-            u.FechaAsigna = Convert.ToDateTime(textBox3.Text);
-
-            bss.EditarUsuarioRolBss(u);
-            MessageBox.Show("Datos Actualizados");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.RolVistas
 {
@@ -18,15 +19,15 @@ namespace SistemasVentas.VISTA.RolVistas
         {
             InitializeComponent();
         }
-
         RolBss bss = new RolBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            Rol r = new Rol();
-            r.Nombre = textBox1.Text;
+            Rol rol = new Rol();
+            rol.Nombre = textBox1.Text;
+            rol.Estado = textBox2.Text;
 
-            bss.InsertarRolesBss(r);
-            MessageBox.Show("Se guardo correctamente el nombre");
+            bss.InsertarRolBss(rol);
+            MessageBox.Show("Se guardo correctamente el Rol");
         }
     }
 }

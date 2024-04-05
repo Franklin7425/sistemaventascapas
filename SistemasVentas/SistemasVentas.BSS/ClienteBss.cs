@@ -1,35 +1,35 @@
 ﻿using SistemasVentas.DAL;
+using SistemasVentas.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemasVentas.Modelos;
 
 namespace SistemasVentas.BSS
 {
     public class ClienteBss
     {
-        ClienteDAL dal = new ClienteDAL();
-        public DataTable ListarClientesBss()
+        ClienteDal dal = new ClienteDal();
+        public DataTable ListarClientesBass()
         {
-            return dal.ListarClientesDAL();
+            return dal.ListarClientesDal();
         }
 
-        public void InsertarClientesBss(Cliente cliente)
+        public void InsertarClienteBss(Cliente cliente)
         {
-            dal.InsertarClienteDAL(cliente);
+            dal.InsertarClienteDal(cliente);
         }
 
-        public Cliente ObtenerIdBss(int id)
+        public Cliente ObtenerClienteIdBss(int id)
         {
             return dal.ObtenerClienteId(id);
         }
 
-        public void EditarClienteBss(Cliente c)
+        public void EditarClienteBss(Cliente cliente)
         {
-            dal.EditarClienteDal(c);
+            dal.EditarClienteDal(cliente);
         }
 
         public void EliminarClienteBss(int id)

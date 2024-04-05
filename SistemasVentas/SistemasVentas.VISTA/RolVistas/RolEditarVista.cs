@@ -9,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.RolVistas
 {
     public partial class RolEditarVista : Form
     {
         int idx = 0;
-        Rol r = new Rol();
+        Rol rol = new Rol();
         RolBss bss = new RolBss();
         public RolEditarVista(int id)
         {
@@ -23,33 +24,20 @@ namespace SistemasVentas.VISTA.RolVistas
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            r.Nombre = textBox1.Text;
-
-            bss.EditarRolBss(r);
-            MessageBox.Show("SE GUARDO CORRECTAMENTE");
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RolEditarVista_Load(object sender, EventArgs e)
         {
-            r = bss.ObtenerIdBss(idx);
-            textBox1.Text = r.Nombre;
+            rol = bss.ObtenerRolIdBss(idx);
+            textBox1.Text = rol.Nombre;
+            textBox2.Text = rol.Estado;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rol.Nombre = textBox1.Text;
+            rol.Estado = textBox2.Text;
+
+            bss.EditarRolBss(rol);
+            MessageBox.Show("Datos Actualizados");
         }
     }
 }

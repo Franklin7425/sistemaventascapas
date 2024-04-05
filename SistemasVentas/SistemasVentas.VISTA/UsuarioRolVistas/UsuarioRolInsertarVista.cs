@@ -1,4 +1,8 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using SistemasVentas.VISTA.RolVistas;
+using SistemasVentas.VISTA.UsuarioVistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,10 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
-using SistemasVentas.VISTA.UsuarioVistas;
-using SistemasVentas.VISTA.RolVistas;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.UsuarioRolVistas
 {
@@ -20,40 +21,39 @@ namespace SistemasVentas.VISTA.UsuarioRolVistas
         {
             InitializeComponent();
         }
-        public static int IdPersonaSeleccionada = 0;
-
         UsuarioRolBss bss = new UsuarioRolBss();
         private void button1_Click(object sender, EventArgs e)
         {
-            UsuarioRol u = new UsuarioRol();
-            u.IdUsuario = IdUsuarioSeleccionada;
-            u.IdRol = IdRolSeleccionada;
-            u.FechaAsigna = Convert.ToDateTime(textBox3.Text);
+            UsuarioRol usuarioRol = new UsuarioRol();
+            usuarioRol.IdUsuario = IdUsuarioSeleccionado;
+            usuarioRol.IdRol = IdRolSeleccionado;
+            usuarioRol.FechaAsigna = dateTimePicker1.Value;
+            usuarioRol.Estado = textBox3.Text;
 
-            bss.InsertarUsuariosRolBss(u);
-            MessageBox.Show("Se guardó correctamente");
+            bss.InsertarUsuarioRolBss(usuarioRol);
+            MessageBox.Show("Se guardo correctamente el Usuario Rol");
         }
 
-        public static int IdUsuarioSeleccionada = 0;
-        UsuarioBss bssuser = new UsuarioBss();
+        public static int IdUsuarioSeleccionado = 0;
+        UsuarioBss bssusuario = new UsuarioBss();
         private void button3_Click(object sender, EventArgs e)
         {
             UsuarioListarVista fr = new UsuarioListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                Usuario usuario = bssuser.ObtenerIdBss(IdUsuarioSeleccionada);
+                Usuario usuario = bssusuario.ObtenerUsuarioIdBss(IdUsuarioSeleccionado);
                 textBox1.Text = usuario.NombreUser;
             }
         }
 
-        public static int IdRolSeleccionada = 0;
+        public static int IdRolSeleccionado = 0;
         RolBss bssrol = new RolBss();
         private void button4_Click(object sender, EventArgs e)
         {
             RolListarVista fr = new RolListarVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                Rol rol = bssrol.ObtenerIdBss(IdRolSeleccionada);
+                Rol rol = bssrol.ObtenerRolIdBss(IdRolSeleccionado);
                 textBox2.Text = rol.Nombre;
             }
         }

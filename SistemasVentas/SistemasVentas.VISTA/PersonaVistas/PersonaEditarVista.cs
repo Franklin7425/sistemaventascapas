@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.BSS;
-using SistemasVentas.Modelos;
-using SistemasVentas.VISTA.UsuarioRolVistas;
 
 namespace SistemasVentas.VISTA.PersonaVistas
 {
     public partial class PersonaEditarVista : Form
     {
-        int idx=0;
-        Persona p = new Persona();
+        int idx = 0;
+        Persona persona = new Persona();
         PersonaBss bss = new PersonaBss();
         public PersonaEditarVista(int id)
         {
@@ -24,27 +23,29 @@ namespace SistemasVentas.VISTA.PersonaVistas
             InitializeComponent();
         }
 
-        
         private void PersonaEditarVista_Load(object sender, EventArgs e)
         {
-            p = bss.ObtenerIdBss(idx);
-            textBox1.Text = p.Nombre;
-            textBox2.Text = p.Apellido;
-            textBox3.Text = p.Telefono;
-            textBox4.Text = p.CI;
-            textBox5.Text = p.Correo;
+            persona = bss.ObtenerIdBss(idx);
+            textBox1.Text = persona.Nombre;
+            textBox2.Text = persona.Apellido;
+            textBox3.Text = persona.Telefono;
+            textBox4.Text = persona.Ci;
+            textBox5.Text = persona.Correo;
+            textBox6.Text = persona.Estado;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            p.Nombre = textBox1.Text;
-            p.Apellido = textBox2.Text;
-            p.Telefono = textBox3.Text;
-            p.CI = textBox4.Text;
-            p.Correo = textBox5.Text;
+            persona.Nombre = textBox1.Text;
+            persona.Apellido = textBox2.Text;
+            persona.Telefono = textBox3.Text;
+            persona.Ci = textBox4.Text;
+            persona.Correo = textBox5.Text;
+            persona.Estado = textBox6.Text;
 
-            bss.EditarPersonaBss(p);
-            MessageBox.Show("SE GUARDO CORRECTAMENTE");
+            bss.EditarPersonaBss(persona);
+            MessageBox.Show("Datos Actualizados");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.Modelos;
-using SistemasVentas.BSS;
 
 namespace SistemasVentas.VISTA.PersonaVistas
 {
@@ -19,17 +19,17 @@ namespace SistemasVentas.VISTA.PersonaVistas
             InitializeComponent();
         }
         PersonaBss bss = new PersonaBss();
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Persona p=new Persona();
-            p.Nombre = textBox1.Text;
-            p.Apellido = textBox2.Text;
-            p.Telefono = textBox3.Text;
-            p.CI=textBox4.Text;
-            p.Correo= textBox5.Text;
+            Persona persona = new Persona();
+            persona.Nombre = textBox1.Text;
+            persona.Apellido = textBox2.Text;
+            persona.Telefono = textBox3.Text;
+            persona.Ci = textBox4.Text;
+            persona.Correo = textBox5.Text;
+            persona.Estado = textBox6.Text;
 
-            bss.InsertarPersonasBss(p);
+            bss.InsertarPersonaBss(persona);
             MessageBox.Show("Se guardo correctamente la persona");
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemasVentas.BSS;
-using SistemasVentas.Modelos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemasVentas.VISTA.TipoProdVistas
 {
     public partial class TipoProdEditarVista : Form
     {
         int idx = 0;
-        TipoProd t = new TipoProd();
+        TipoProd tipoProd = new TipoProd();
         TipoProdBss bss = new TipoProdBss();
         public TipoProdEditarVista(int id)
         {
@@ -25,16 +26,18 @@ namespace SistemasVentas.VISTA.TipoProdVistas
 
         private void TipoProdEditarVista_Load(object sender, EventArgs e)
         {
-            t = bss.ObtenerIdBss(idx);
-            textBox1.Text = t.Nombre;
+            tipoProd = bss.ObtenerTipoProdIdBss(idx);
+            textBox1.Text = tipoProd.Nombre;
+            textBox2.Text = tipoProd.Estado;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            t.Nombre = textBox1.Text;
+            tipoProd.Nombre = textBox1.Text;
+            tipoProd.Estado = textBox2.Text;
 
-            bss.EditarTipoProdBss(t);
-            MessageBox.Show("SE GUARDO CORRECTAMENTE");
+            bss.EditarTipoProdBss(tipoProd);
+            MessageBox.Show("Datos Actualizados");
         }
     }
 }
